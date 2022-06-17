@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/model', function () {
+    return view('model');
+});
+
+Route::get('/compass', function () {
+    return view('compass');
+});
