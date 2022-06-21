@@ -24,3 +24,11 @@ Route::get('/model', function () {
 Route::get('/compass', function () {
     return view('compass');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/avatar', function () {
+    return view('avatar');
+});

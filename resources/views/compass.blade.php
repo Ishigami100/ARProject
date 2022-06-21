@@ -12,10 +12,10 @@
 
 <body>
     <!-- ※1 a-scene に mindar-image 属性を追加しマーカーファイル（.mindファイル）のパスを記載-->
-    <a-scene mindar-image="imageTargetSrc: ./compass/targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene mindar-image="imageTargetSrc: ./web_img/compass/targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
-            <a-asset-item id="avatarModel" src="./compass/obj/tinker.obj"></a-asset-item>
-            <a-asset-item id="crate-mtl" src="./compass/obj/obj.mtl"></a-asset-item>
+            <a-asset-item id="avatarModel" src="./web_img/compass/obj/tinker.obj"></a-asset-item>
+            <a-asset-item id="crate-mtl" src="./web_img/compass/obj/obj.mtl"></a-asset-item>
 
         </a-assets>
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
