@@ -13,8 +13,10 @@
     <!-- ※1 a-scene に mindar-image 属性を追加しマーカーファイル（.mindファイル）のパスを記載-->
      <a-scene mindar-image="imageTargetSrc: ./web_img/model/targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets timeout="40000">
-            <a-asset-item id="avatarModel" src="./web_img/model/odm_texturing/odm_textured_model_geo.obj"></a-asset-item>
-            <a-asset-item id="crate-mtl" src="./web_img/model/odm_texturing/odm_textured_model_geo.mtl"></a-asset-item>
+            <!--<a-asset-item id="avatarModel" src="./web_img/model/odm_texturing/odm_textured_model_geo.obj"></a-asset-item>
+            <a-asset-item id="crate-mtl" src="./web_img/model/odm_texturing/odm_textured_model_geo.mtl"></a-asset-item>-->
+             <a-asset-item id="avatarModel" src="./web_img/model/kamlab/tdu_hatoyama.obj"></a-asset-item>
+            <a-asset-item id="crate-mtl" src="./web_img/model/kamlab/tdu_hatoyama.mtl"></a-asset-item>
 
         </a-assets>
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
