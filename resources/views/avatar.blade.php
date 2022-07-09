@@ -252,7 +252,7 @@
             <a-text id="word" value="start" position="0.3 -0.5 0" height="0.8" width="2.0" rotation="0 0 0" color="#000000"></a-text>
             <a-plane id="stopButton34" class="clickable" color="white" opaciy="0.5" position="-0.4 -0.5 0" height="0.2" width="0.5" rotation="0 0 0"></a-plane>
             <a-text id="word" value="stop" position="-0.5 -0.5 0" height="0.8" width="2.0" rotation="0 0 0" color="#000000"></a-text>
-        </a-entity>-->
+        </a-entity>
         <a-entity cursor="rayOrigin: mouse" id="cursor"
 
 		    fuse="true" fuse-timeout="1000"

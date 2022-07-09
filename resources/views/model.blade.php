@@ -15,14 +15,15 @@
         <a-assets timeout="40000">
             <!--<a-asset-item id="avatarModel" src="./web_img/model/odm_texturing/odm_textured_model_geo.obj"></a-asset-item>
             <a-asset-item id="crate-mtl" src="./web_img/model/odm_texturing/odm_textured_model_geo.mtl"></a-asset-item>-->
-             <a-asset-item id="avatarModel" src="./web_img/model/kamlab/tdu_hatoyama.obj"></a-asset-item>
-            <a-asset-item id="crate-mtl" src="./web_img/model/kamlab/tdu_hatoyama.mtl"></a-asset-item>
-
+             <!--<a-asset-item id="avatarModel" src="./web_img/model/3d_obj4/odm_textured_model_geo.obj"></a-asset-item>
+            <a-asset-item id="crate-mtl" src="./web_img/model/3d_obj4/odm_textured_model_geo.mtl"></a-asset-item>-->
+            <a-asset-items id="model" src="./web_img/model/hatoyama3dmodel6.glb" ></a-asset-items>
         </a-assets>
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
         <!-- ※2 mindar-image-target 属性をつけることでマーカーと対応するentityを作れる -->
          <a-entity mindar-image-target="targetIndex: 0">
-            <a-obj-model visible="true" id="model" src="#avatarModel" mtl="#crate-mtl" rotation="0 0 0" position="0 0 0" scale="0.004 0.004 0.004"></a-obj-model>
+            <a-entity gltf-model="#model" scale="0.001 0.001 0.001"></a-entity>
+            <!--<a-obj-model visible="true" id="model" src="#avatarModel"rotation="0 0 0" position="0 0 0" scale="0.004 0.004 0.004"></a-obj-model>-->
         </a-entity>
     </a-scene>
 
