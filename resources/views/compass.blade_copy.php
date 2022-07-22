@@ -10,19 +10,7 @@
     <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
 </head>
 
-<style type="text/css">
-#button{
-  z-index: 9999;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-}
-
-</style>
-
 <body>
-
-    <button id="button" onclick="request_permission()">このエリアを押して モーションの利用を許可してください (iOS 13+) </button>
     <!-- ※1 a-scene に mindar-image 属性を追加しマーカーファイル（.mindファイル）のパスを記載-->
     <a-scene mindar-image="imageTargetSrc: ./web_img/compass/targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
@@ -40,34 +28,6 @@
     </a-scene>
 
     <script>
-var alpha = 0, beta = 0, gamma = 0;   
-var rad=0;
-var length=0;          // ジャイロの値を入れる変数を3個用意
-function request_permission(){
-     if (
-         DeviceMotionEvent &&
-         DeviceMotionEvent.requestPermission &&
-         typeof DeviceMotionEvent.requestPermission === 'function'
-     ) {
-         DeviceMotionEvent.requestPermission();
-     }
-     if (
-         DeviceOrientationEvent &&
-         DeviceOrientationEvent.requestPermission &&
-         typeof DeviceOrientationEvent.requestPermission === 'function'
-     ) {
-         DeviceOrientationEvent.requestPermission();
-     }
-}
-
-// ジャイロセンサの値が変化したら実行される deviceorientation イベント
-window.addEventListener("deviceorientation", (dat) => {
-    alpha = dat.alpha;  // z軸（表裏）まわりの回転の角度（反時計回りがプラス）
-    beta  = dat.beta;   // x軸（左右）まわりの回転の角度（引き起こすとプラス）
-    gamma = dat.gamma;  // y軸（上下）まわりの回転の角度（右に傾けるとプラス）
-    change_position();
-});
-
         var R_EARTH = 6378137; // 地球の赤道半径
         const R = Math.PI / 180;
 
@@ -76,20 +36,23 @@ window.addEventListener("deviceorientation", (dat) => {
             //console上に表示
             console.log("緯度:" + position.coords.latitude);
             console.log("経度:" + position.coords.longitude);
+            console.log("経度:" + position.coords.heading);
 
             //現在地
             let latitude_departure = position.coords.latitude;
             let longitude_departure = position.coords.longitude;
+            let heading_departure = position.coords.heading;
 
             //神戸研究室の位置情報
             let latitude_arrival = 35.98587585838652;
             let longitude_arrival = 139.37184706547475;
 
             //距離と方角の計算
-            length = distance(latitude_departure, longitude_departure, latitude_arrival, longitude_arrival);
-            rad = azimuth(latitude_departure, longitude_departure, latitude_arrival, longitude_arrival);
+            var length = distance(latitude_departure, longitude_departure, latitude_arrival, longitude_arrival);
+            var rad = azimuth(latitude_departure, longitude_departure, latitude_arrival, longitude_arrival);
             //距離と方角を計算した上で、矢印と表示の変更
-            change_position();
+            change_position(length, rad, heading_departure);
+
         }
 
         //位置情報取得失敗
@@ -120,24 +83,10 @@ window.addEventListener("deviceorientation", (dat) => {
         }
 
         //矢印の方向の変更を行う
-        function change_position() {
+        function change_position(length, rad, heading) {
 
             //方角を矢印の回り方に合わせて変換
-            if(rad<0){
-                rad2=360+rad;
-            }
-            else{
-                rad2=rad;
-            }
-
-            if(rad<=parseInt(alpha)){
-                rad2=parseInt(alpha)-rad;
-            }else{
-                rad2=360-(rad-parseInt(alpha));
-            }
-
-            if(rad2>360)rad2-=360;
-            rad2=360-rad2;
+            rad2 = -rad;
 
             // Entityを取得
             var el = document.querySelector('#model');
@@ -154,12 +103,12 @@ window.addEventListener("deviceorientation", (dat) => {
 
             //文字列の変更
             var str = "Welcome to Kambe-Lab!!\n straight-line distance:" + String(length.toFixed(3)) + "km";
-            console.log(str);
             // Entityを取得
             var el2 = document.querySelector('#word');
-            el2.setAttribute('value', str);
             console.log(el2.getAttribute('value'));
+            el2.setAttribute('value', str);
         }
+
         navigator.geolocation.watchPosition(success, error);
     </script>
 </body>

@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::get('', function () {
-    return view('compass');
+    return view('home');
 });
 
 Route::get('/model', function () {
@@ -29,10 +29,10 @@ Route::get('/compass', function () {
     return view('compass');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
-
 Route::get('/avatar', function () {
     return view('avatar');
+});
+
+Route::get('/poster', function () {
+    return view('poster');
 });
