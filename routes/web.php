@@ -29,10 +29,10 @@ Route::get('/compass', function () {
     return view('compass');
 });
 
-Route::get('/avatar', function () {
-    return view('avatar');
-});
-
 Route::get('/poster', function () {
     return view('poster');
+});
+
+Route::get('/explain', function () {
+    return view('explain');
 });

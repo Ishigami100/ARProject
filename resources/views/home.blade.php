@@ -18,9 +18,9 @@
         <ul class="menu">
           <li class="top"><a href="https://www.kamlab-ninja-map.com">home</a></li>
           <li><a href="https://www.kamlab-ninja-map.com/compass">Compass</a></li>
-          <!--<li><a href="https://www.kamlab-ninja-map.com/model">Generic</a></li>-->
+          <li><a href="https://www.kamlab-ninja-map.com/model">model</a></li>-->
           <li><a href="https://www.kamlab-ninja-map.com/poster">Poster</a></li>
-          <li><a href="https://www.kamlab-ninja-map.com/avatar">Avatar</a></li>
+          <li><a href="https://www.kamlab-ninja-map.com/explain">Avatar</a></li>
         </ul>
       </header>
       
@@ -70,7 +70,7 @@
               <p>(パソコンからでも使用することができます。)</p>
                 <p>※注意事項</p>
                 <p>・サイトにアクセスした後、カメラを許可してください。</p>
-                <button type="button"onclick="location.href='https://www.kamlab-ninja-map.com/avatar'">アバター案内機能へ</button>
+                <button type="button"onclick="location.href='https://www.kamlab-ninja-map.com/explain'">アバター案内機能へ</button>
         </div>
       </div>
 
