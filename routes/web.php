@@ -39,3 +39,7 @@ Route::get('/explain', function () {
 Route::get('/guide', function () {
     return view('guide');
 });
+Route::get('/rd', function () {
+    return view('rd');
+});
+
