@@ -36,3 +36,6 @@ Route::get('/poster', function () {
 Route::get('/explain', function () {
     return view('explain');
 });
+Route::get('/guide', function () {
+    return view('guide');
+});
