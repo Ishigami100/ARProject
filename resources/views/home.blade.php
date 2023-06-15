@@ -18,7 +18,7 @@
         <ul class="menu">
           <li class="top"><a href="https://www.kamlab-ninja-map.com">home</a></li>
           <li><a href="https://www.kamlab-ninja-map.com/compass">Compass</a></li>
-          <li><a href="https://www.kamlab-ninja-map.com/model">model</a></li>-->
+          <li><a href="https://www.kamlab-ninja-map.com/rd">model</a></li>-->
           <li><a href="https://www.kamlab-ninja-map.com/poster">Poster</a></li>
           <li><a href="https://www.kamlab-ninja-map.com/explain">Avatar</a></li>
         </ul>
@@ -43,14 +43,14 @@
                       <button type="button"onclick="location.href='https://www.kamlab-ninja-map.com/compass'">コンパス機能へ</button>
         </div>
         <div class="child2">
-        <p>鳩山キャンパス3dモデル機能</p>
+        <p>RDナビゲーション機能</p>
         <p>機能</p>
-        <p>下記のボタンからサイトにアクセスし、オープンキャンパスマップの地図を読み取ると<p>
-          <p>ARで鳩山キャンパスの3dモデルが表示されます。</p>
+        <p>下記のボタンからサイトにアクセスし、RD学系の紹介冊子にかざすと<p>
+          <p>ARでナビゲーターが各コースの紹介をしてくれます。</p>
             <p>(パソコンからでも使用することができます。)</p>
               <p>※注意事項</p>
               <p>・サイトにアクセスした後、カメラを許可してください。</p>
-                    <button type="button"onclick="location.href='https://www.kamlab-ninja-map.com/model'">3dモデル機能へ</button>
+                    <button type="button"onclick="location.href='https://www.kamlab-ninja-map.com/rd'">RDナビゲーション機能へ</button>
         </div>
         <div class="child3">
           <p>ポスター音声機能</p>
